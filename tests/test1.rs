@@ -1,18 +1,3 @@
-# ez-pixmap
-
-A naive and easy inline pixmap (xpm-like) image crate. This is non-compliant with the xpm image format, however it's close enough.
-- Doesn't support monochrome nor symbolics.
-- Supports only 1 character per pixel.
-
-Main use case: Simple icon art.
-
-## Usage
-```toml
-[dependencies]
-ez-pixmap = "0.1"
-```
-
-```rust
 extern crate ez_pixmap;
 
 const PXM: &[&str] = &[
@@ -57,24 +42,11 @@ const PXM: &[&str] = &[
     "##################################################",
 ];
 
-fn main() -> Result<(), Box<dyn std::error::Error>> {
+#[test]
+fn test1() -> Result<(), Box<dyn std::error::Error>> {
     let my_image = ez_pixmap::RgbaImage::new(PXM)?;
     assert_eq!(my_image.width(), 50);
     assert_eq!(my_image.height(), 34);
     assert_eq!(my_image.data().len(), 50 * 34 * 4); // since it's rgba
     Ok(())
 }
-```
-
-## Examples
-Check the examples directory for an example usage with the image crate.
-```
-$ cargo run --example example1
-$ cargo run --example example2
-```
-
-![alt_test](examples/image.png)
-
-![alt_test](examples/image2.png)
-
-

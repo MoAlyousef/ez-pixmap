@@ -2,7 +2,9 @@
 //!
 //! A naive and easy inline pixmap (xpm-like) image crate. This is non-compliant with xpm image format, however it's close enough.
 //! - Doesn't support monochrome nor symbolics.
-//! - Supports nly 1 character per pixel.
+//! - Supports only 1 character per pixel.
+//!
+//! Main use case: Simple icon art.
 //!
 //! ## Usage
 //! ```ignored
@@ -59,6 +61,7 @@
 //!     let my_image = ez_pixmap::RgbaImage::new(PXM)?;
 //!     assert_eq!(my_image.width(), 50);
 //!     assert_eq!(my_image.height(), 34);
+//!     assert_eq!(my_image.data().len(), 50 * 34 * 4); // since it's rgba
 //!     Ok(())
 //! }
 //! ```

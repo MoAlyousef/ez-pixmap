@@ -8,7 +8,6 @@ A naive and easy inline pixmap image format crate. This is non-compliant with xp
 ```toml
 [dependencies]
 ez-pixmap = "0.1"
-image = "0.23"
 ```
 
 ```rust
@@ -63,3 +62,5 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 ```
 
 ![alt_test](examples/image.png)
+
+Check the examples directory for example usage with the image crate.

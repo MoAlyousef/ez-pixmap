@@ -63,6 +63,12 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 }
 ```
 
+## Examples
+Check the examples directory for an example usage with the image crate.
+```
+$ cargo run --example example1
+```
+
 ![alt_test](examples/image.png)
 
-Check the examples directory for example usage with the image crate.
+

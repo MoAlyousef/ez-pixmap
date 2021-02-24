@@ -1,6 +1,6 @@
 # ez-pixmap
 
-A naive and easy inline pixmap (xpm-like) image crate. This is non-compliant with xpm image format, however it's close enough.
+A naive and easy inline pixmap (xpm-like) image crate. This is non-compliant with the xpm image format, however it's close enough.
 - Doesn't support monochrome nor symbolics.
 - Supports Only 1 character per pixel.
 

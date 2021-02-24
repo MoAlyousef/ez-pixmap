@@ -57,10 +57,11 @@
 //!
 //! fn main() -> Result<(), Box<dyn std::error::Error>> {
 //!     let my_image = ez_pixmap::RgbaImage::new(PXM)?;
+//!     assert_eq!(my_image.width(), 50);
+//!     assert_eq!(my_image.height(), 34);
 //!     Ok(())
 //! }
 //! ```
-
 
 #![warn(missing_docs)]
 

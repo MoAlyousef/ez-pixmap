@@ -18,7 +18,7 @@ const PXM: &[&str] = &[
     "  c #000000ff",
     "o c #ff9900ff",
     "@ c #ffffffff",
-    "# c #ffffff00",
+    "# c #ffffff00", // transparent
     "##################################################",
     "###      ##############################       ####",
     "### ooooo  ###########################  ooooo ####",
@@ -57,6 +57,8 @@ const PXM: &[&str] = &[
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let my_image = ez_pixmap::RgbaImage::new(PXM)?;
+    assert_eq!(my_image.width(), 50);
+    assert_eq!(my_image.height(), 34);
     Ok(())
 }
 ```

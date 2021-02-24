@@ -1,0 +1,15 @@
+[package]
+name = "ez-pixmap"
+version = "0.1.0"
+authors = ["Mohammed Alyousef <mohammed.alyousef@neurosrg.com>"]
+edition = "2018"
+description = "A naive and easy inline pixmap image format"
+repository = "https://github.com/MoAlyousef/ez-pixmap"
+documentation = "https://docs.rs/ez-pixmap"
+keywords = ["image", "format", "pixmap", "xpm"]
+categories = ["multimedia::images", "multimedia::encoding"]
+readme = "README.md"
+license = "MIT"
+
+[dev-dependencies]
+image = { version = "0.23", default-features = false, features = ["png"] }

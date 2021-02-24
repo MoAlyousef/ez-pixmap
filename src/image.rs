@@ -67,7 +67,6 @@ pub struct RgbaImage {
 impl RgbaImage {
     /// Generate RGBA data from a pixmap
     pub fn new(pixmap: &[&str]) -> Result<RgbaImage, EzPixmapError> {
-        let x_color_map = colors::init_colors();
         let mut header = Header::default();
         let mut data = vec![];
         let mut col_vec: Vec<ColorMap> = vec![];
@@ -102,7 +101,7 @@ impl RgbaImage {
                     let a = 255;
                     col.col = (r, g, b, a);
                 } else {
-                    col.col = *x_color_map.get(color.as_str()).unwrap_or(&(255, 255, 255, 0));
+                    col.col = *colors::XCOLORMAP.get(color.as_str()).unwrap_or(&(255, 255, 255, 0));
                 }
                 col_vec.push(col);
                 continue;

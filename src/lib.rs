@@ -68,3 +68,6 @@
 mod colors;
 mod image;
 pub use crate::image::*;
+
+#[macro_use]
+extern crate lazy_static;

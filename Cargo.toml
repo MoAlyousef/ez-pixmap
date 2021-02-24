@@ -1,6 +1,6 @@
 [package]
 name = "ez-pixmap"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["Mohammed Alyousef <mohammed.alyousef@neurosrg.com>"]
 edition = "2018"
 description = "A naive and easy inline pixmap (xpm-like) image crate"
@@ -10,6 +10,9 @@ keywords = ["image", "format", "pixmap", "xpm"]
 categories = ["multimedia::images", "multimedia::encoding"]
 readme = "README.md"
 license = "MIT"
+
+[dependencies]
+lazy_static = "1.4.0"
 
 [dev-dependencies]
 image = { version = "0.23", default-features = false, features = ["png"] }

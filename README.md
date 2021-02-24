@@ -4,6 +4,8 @@ A naive and easy inline pixmap (xpm-like) image crate. This is non-compliant wit
 - Doesn't support monochrome nor symbolics.
 - Supports Only 1 character per pixel.
 
+Main use case: Simple icon art.
+
 ## Usage
 ```toml
 [dependencies]

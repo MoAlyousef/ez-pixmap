@@ -1,8 +1,8 @@
 # ez-pixmap
 
-A naive and easy inline pixmap image format crate. This is non-compliant with xpm image format, however it's close enough.
-- It only supports rgba hex values, no monochrome nor symbolics.
-- Only 1 character per pixel.
+A naive and easy inline pixmap (xpm-like) image crate. This is non-compliant with xpm image format, however it's close enough.
+- Doesn't support monochrome nor symbolics.
+- Supports Only 1 character per pixel.
 
 ## Usage
 ```toml
@@ -15,10 +15,10 @@ extern crate ez_pixmap;
 
 const PXM: &[&str] = &[
     "50 34 4 1",
-    "  c #000000ff",
-    "o c #ff9900ff",
-    "@ c #ffffffff",
-    "# c #ffffff00", // transparent
+    "  c black",
+    "o c #ff9900",
+    "@ c white",
+    "# c None", 
     "##################################################",
     "###      ##############################       ####",
     "### ooooo  ###########################  ooooo ####",

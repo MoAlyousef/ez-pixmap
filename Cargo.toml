@@ -1,9 +1,9 @@
 [package]
 name = "ez-pixmap"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Mohammed Alyousef <mohammed.alyousef@neurosrg.com>"]
 edition = "2018"
-description = "A naive and easy inline pixmap image format"
+description = "A naive and easy inline pixmap (xpm-like) image crate"
 repository = "https://github.com/MoAlyousef/ez-pixmap"
 documentation = "https://docs.rs/ez-pixmap"
 keywords = ["image", "format", "pixmap", "xpm"]

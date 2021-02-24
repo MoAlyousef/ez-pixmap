@@ -2,7 +2,7 @@
 
 A naive and easy inline pixmap (xpm-like) image crate. This is non-compliant with the xpm image format, however it's close enough.
 - Doesn't support monochrome nor symbolics.
-- Supports Only 1 character per pixel.
+- Supports only 1 character per pixel.
 
 Main use case: Simple icon art.
 

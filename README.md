@@ -80,6 +80,6 @@ $ cargo run --example minifb
 
 ![alt_test](screenshots/image.png)
 
-![alt_test](screenshots/minifb.png)
+![alt_test](screenshots/minifb.jpg)
 
 

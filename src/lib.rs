@@ -1,6 +1,7 @@
 //! # ez-pixmap
 //!
-//! A naive and easy inline pixmap (xpm-like) image crate. This is non-compliant with xpm image format, however it's close enough.
+//! A naive and easy inline pixmap (xpm-like) image decoder. 
+//! This is non-compliant with xpm image format, however it's close enough.
 //! - Doesn't support monochrome nor symbolics.
 //! - Supports only 1 character per pixel.
 //!
@@ -9,18 +10,19 @@
 //! ## Usage
 //! ```ignored
 //! [dependencies]
-//! ez-pixmap = "0.1"
+//! ez-pixmap = "0.2"
 //! ```
 //!
 //! ```no_run
 //! extern crate ez_pixmap;
 //!
 //! const PXM: &[&str] = &[
-//!     "50 34 4 1",
-//!     "  c black",
+//!     "50 34 4 1", // <width> <height> <num of colors> <chars/pixels>
+//!     "  c black", // <char> c <color>
 //!     "o c #ff9900",
 //!     "@ c white",
 //!     "# c None",
+//!     // pixels
 //!     "##################################################",
 //!     "###      ##############################       ####",
 //!     "### ooooo  ###########################  ooooo ####",
@@ -58,13 +60,15 @@
 //! ];
 //!
 //! fn main() -> Result<(), Box<dyn std::error::Error>> {
-//!     let my_image = ez_pixmap::RgbaImage::new(PXM)?;
+//!     let my_image = ez_pixmap::RgbaImage::from(PXM)?;
 //!     assert_eq!(my_image.width(), 50);
 //!     assert_eq!(my_image.height(), 34);
 //!     assert_eq!(my_image.data().len(), 50 * 34 * 4); // since it's rgba
 //!     Ok(())
 //! }
 //! ```
+//!
+//! The list of supported color names can be found [here](https://github.com/MoAlyousef/ez-pixmap/blob/main/src/colors.rs).
 
 #![warn(missing_docs)]
 

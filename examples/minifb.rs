@@ -1,5 +1,7 @@
 extern crate ez_pixmap;
-extern crate image;
+extern crate minifb;
+
+use minifb::{Key, ScaleMode, Window, WindowOptions};
 
 pub const RUSTLOGO: &[&str] = &[
 "144 144 64 1 ",
@@ -213,14 +215,41 @@ pub const RUSTLOGO: &[&str] = &[
 "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFDDFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
 ];
 
-fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let my_image = ez_pixmap::RgbaImage::new(RUSTLOGO)?;
-    image::save_buffer(
-        "examples/image2.png",
-        my_image.data(),
-        my_image.width(),
-        my_image.height(),
-        image::ColorType::Rgba8,
-    )?;
-    Ok(())
+fn main() {
+    let my_image = ez_pixmap::RgbaImage::from(RUSTLOGO).unwrap();
+
+    let u32_buffer: Vec<u32> = my_image
+        .data()
+        .chunks(4)
+        .map(|v| {
+            u32::from_str_radix(
+                // We need ARGB
+                &format!("{:02x}{:02x}{:02x}{:02x}", v[3], v[0], v[1], v[2]),
+                16,
+            )
+            .unwrap()
+        })
+        .collect();
+
+    let mut window = Window::new(
+        "ez-pixmap image example",
+        my_image.width() as usize,
+        my_image.height() as usize,
+        WindowOptions {
+            resize: false,
+            scale_mode: ScaleMode::Center,
+            ..WindowOptions::default()
+        },
+    )
+    .expect("Unable to open Window");
+
+    while window.is_open() && !window.is_key_down(Key::Escape) {
+        window
+            .update_with_buffer(
+                &u32_buffer,
+                my_image.width() as usize,
+                my_image.height() as usize,
+            )
+            .unwrap();
+    }
 }

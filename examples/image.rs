@@ -44,9 +44,9 @@ const PXM: &[&str] = &[
 ];
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let my_image = ez_pixmap::RgbaImage::new(PXM)?;
+    let my_image = ez_pixmap::RgbaImage::from(PXM)?;
     image::save_buffer(
-        "examples/image.png",
+        "screenshots/image.png",
         my_image.data(),
         my_image.width(),
         my_image.height(),

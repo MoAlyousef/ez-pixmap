@@ -66,7 +66,7 @@ pub struct RgbaImage {
 
 impl RgbaImage {
     /// Generate RGBA data from a pixmap
-    pub fn new(pixmap: &[&str]) -> Result<RgbaImage, EzPixmapError> {
+    pub fn from(pixmap: &[&str]) -> Result<RgbaImage, EzPixmapError> {
         let mut header = Header::default();
         let mut data = vec![];
         let mut col_vec: Vec<ColorMap> = vec![];

@@ -44,7 +44,7 @@ const PXM: &[&str] = &[
 
 #[test]
 fn test1() -> Result<(), Box<dyn std::error::Error>> {
-    let my_image = ez_pixmap::RgbaImage::new(PXM)?;
+    let my_image = ez_pixmap::RgbaImage::from(PXM)?;
     assert_eq!(my_image.width(), 50);
     assert_eq!(my_image.height(), 34);
     assert_eq!(my_image.data().len(), 50 * 34 * 4); // since it's rgba

@@ -1,6 +1,6 @@
 [package]
 name = "ez-pixmap"
-version = "0.2.0"
+version = "0.2.1"
 authors = ["Mohammed Alyousef <mohammed.alyousef@neurosrg.com>"]
 edition = "2018"
 description = "A naive and easy inline pixmap (xpm-like) image decoder"
@@ -17,3 +17,5 @@ lazy_static = "1.4.0"
 [dev-dependencies]
 image = { version = "0.23", default-features = false, features = ["png"] }
 minifb = "0.19"
+fltk = { version = "0.15", features = ["fltk-bundled"] }
+ufb = "0.1"

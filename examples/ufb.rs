@@ -45,7 +45,13 @@ const PXM: &[&str] = &[
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let my_image = ez_pixmap::RgbaImage::from(PXM)?;
-    let mut win = ufb::Window::new(50, 34, "")?;
-    win.show(my_image.data(), ufb::ColorDepth::Rgba8)?;
+    let mut win = ufb::Window::new(
+        my_image.width(),
+        my_image.height(),
+        ufb::ColorDepth::Rgba8,
+        "My Pixmap",
+    )?;
+    win.get_frame().copy_from_slice(my_image.data());
+    win.show();
     Ok(())
 }

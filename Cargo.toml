@@ -18,4 +18,4 @@ lazy_static = "1.4.0"
 image = { version = "0.23", default-features = false, features = ["png"] }
 minifb = "0.19"
 fltk = { version = "0.15", features = ["fltk-bundled"] }
-ufb = "0.1"
+ufb = "0.1.2"

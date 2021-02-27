@@ -1,6 +1,6 @@
 [package]
 name = "ez-pixmap"
-version = "0.2.1"
+version = "0.2.2"
 authors = ["Mohammed Alyousef <mohammed.alyousef@neurosrg.com>"]
 edition = "2018"
 description = "A naive and easy inline pixmap (xpm-like) image decoder"
@@ -12,7 +12,7 @@ readme = "README.md"
 license = "MIT"
 
 [dependencies]
-lazy_static = "1.4.0"
+color-maps = "0.1"
 
 [dev-dependencies]
 image = { version = "0.23", default-features = false, features = ["png"] }

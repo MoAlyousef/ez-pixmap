@@ -1,7 +1,7 @@
 extern crate ez_pixmap;
 extern crate fltk;
 
-use fltk::*;
+use fltk::{enums::*, prelude::*, *};
 
 const PXM: &[&str] = &[
     "50 34 4 1",
